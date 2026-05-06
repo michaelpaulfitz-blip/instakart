@@ -617,6 +617,60 @@
       font-family: var(--font); flex-shrink: 0;
     }
 
+    /* ── Phone fan (marketing panel) ── */
+    .phone-fan {
+      position: relative; height: 230px; margin: 22px 0 26px;
+    }
+    .mp {
+      width: 106px; height: 210px; border-radius: 14px; border: 5px solid #222;
+      background: #fff; overflow: hidden; position: absolute;
+      box-shadow: 0 16px 48px rgba(0,0,0,.6);
+      display: flex; flex-direction: column;
+    }
+    .mp:nth-child(1) { left: 6%; top: 22px; z-index: 1; transform: perspective(500px) rotateY(22deg) rotateZ(-4deg); }
+    .mp:nth-child(2) { left: 50%; top: 0; z-index: 3; transform: translateX(-50%); }
+    .mp:nth-child(3) { right: 6%; top: 22px; z-index: 2; transform: perspective(500px) rotateY(-22deg) rotateZ(4deg); }
+    .mph {
+      background: #000; color: #fff; padding: 5px 7px 4px;
+      font-size: 6.5px; font-weight: 800; letter-spacing: -.2px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; gap: 2px;
+    }
+    .mph .os { color: #F55D2C; }
+    .mpb { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+    .mp-loc { background: #000; padding: 2px 6px 4px; font-size: 5px; color: rgba(255,255,255,.65); flex-shrink: 0; }
+    .mp-cats { display: flex; gap: 4px; padding: 4px 5px; overflow: hidden; flex-shrink: 0; }
+    .mp-cat { width: 18px; height: 18px; border-radius: 50%; background: #f6f6f6; display: flex; align-items: center; justify-content: center; font-size: 9px; position: relative; flex-shrink: 0; }
+    .mp-cat.act { background: #fff2ee; }
+    .mp-catx { position: absolute; inset: 0; border-radius: 50%; background: rgba(229,57,53,.82); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 7px; font-weight: 900; }
+    .mp-card { margin: 3px 5px; border-radius: 6px; overflow: hidden; flex-shrink: 0; }
+    .mp-card-img { height: 36px; background: linear-gradient(135deg, #6b2000, #F55D2C); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+    .mp-card-info { background: #fff; padding: 3px 4px; }
+    .mp-card-name { font-size: 5.5px; font-weight: 700; color: #000; margin-bottom: 1px; }
+    .mp-card-meta { font-size: 4.5px; color: #777; }
+    .mp-hero { height: 34px; background: linear-gradient(135deg, #6b2000, #F55D2C); display: flex; align-items: flex-end; padding: 4px 6px; flex-shrink: 0; }
+    .mp-hero-txt { font-size: 5.5px; font-weight: 800; color: #fff; }
+    .mp-mic-wrap { display: flex; flex-direction: column; align-items: center; padding: 12px 0 4px; flex: 1; }
+    .mp-mic-btn { width: 30px; height: 30px; border-radius: 50%; background: #06C167; display: flex; align-items: center; justify-content: center; font-size: 13px; box-shadow: 0 2px 8px rgba(6,193,103,.5); }
+    .mp-mic-lbl { font-size: 5px; color: #444; margin-top: 6px; text-align: center; line-height: 1.4; padding: 0 6px; }
+    .mp-mod { background: #f6f6f6; padding: 4px 5px; border-bottom: 1px solid #ebebeb; flex-shrink: 0; }
+    .mp-mod-bar { background: #fff; border: 1px solid #d4d4d4; border-radius: 4px; height: 10px; font-size: 5px; color: #aaa; padding: 0 4px; display: flex; align-items: center; }
+    .mp-items { padding: 1px 0; flex: 1; }
+    .mp-item { display: flex; align-items: center; gap: 4px; padding: 4px 5px; border-bottom: 1px solid #f0f0f0; }
+    .mp-item-img { width: 14px; height: 14px; border-radius: 3px; background: #f6f6f6; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 7px; }
+    .mp-item-lines { flex: 1; }
+    .mp-item-n { height: 4px; background: #333; border-radius: 2px; margin-bottom: 2px; width: 72%; }
+    .mp-item-s { height: 3px; background: #ccc; border-radius: 2px; width: 48%; }
+    .mp-co { margin: 4px 5px 5px; background: #000; border-radius: 5px; padding: 5px; text-align: center; font-size: 5.5px; color: #fff; font-weight: 700; flex-shrink: 0; }
+
+    /* ── Marketing copy ── */
+    .mkt-copy-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: #F55D2C; margin-bottom: 5px; }
+    .mkt-copy-p { font-size: 12px; color: rgba(255,255,255,.62); line-height: 1.55; margin-bottom: 6px; }
+    .mkt-copy-p strong { color: rgba(255,255,255,.9); }
+    .mkt-copy-block { margin-bottom: 16px; }
+    .mkt-feat { display: flex; flex-direction: column; gap: 5px; margin-top: 6px; }
+    .mkt-feat-item { font-size: 12px; color: rgba(255,255,255,.72); display: flex; align-items: baseline; gap: 6px; }
+    .mkt-feat-item strong { color: rgba(255,255,255,.95); }
+
     @media (max-width: 780px) { .mkt { display: none; } #page { justify-content: center; } }
     @media (max-height: 900px) { .phone { height: calc(100vh - 48px); } }
   </style>
@@ -625,8 +679,8 @@
 
 <div id="page">
   <div class="mkt">
-    <div class="mkt-logo" style="display:flex;align-items:center;gap:16px">
-      <svg width="52" height="64" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="mkt-logo" style="display:flex;align-items:center;gap:14px">
+      <svg width="44" height="54" viewBox="0 0 52 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M26 14 C26 14 10 20 8 38 C6 52 16 62 26 62 C36 62 46 52 44 38 C42 20 26 14 26 14Z" fill="#F55D2C"/>
         <path d="M26 14 C26 14 22 20 20 28 C18 36 20 44 26 44 C32 44 34 36 32 28 C30 20 26 14 26 14Z" fill="#d44a1f"/>
         <path d="M26 14 C24 8 18 4 14 6 C10 8 10 14 14 14 C18 14 22 12 26 14Z" fill="#43B02A"/>
@@ -635,15 +689,74 @@
       </svg>
       <div>Insta<span>Kart</span></div>
     </div>
-    <div class="mkt-tag">Groceries, delivered<br>in an instant.</div>
-    <div class="mkt-sub">Powered by AI + live grocery inventory</div>
-    <div class="mkt-badges">
-      <div class="mkt-badge">AI-Powered Shopping Lists</div>
-      <div class="mkt-badge">Voice-First Experience</div>
-      <div class="mkt-badge">Real-Time Grocery Inventory</div>
-      <div class="mkt-badge">Live Prices &amp; Availability</div>
+    <div class="mkt-sub" style="margin-top:6px;margin-bottom:0">A portfolio demo by Michael Fitzpatrick</div>
+
+    <!-- 3-phone fan: Home → Store → Cart -->
+    <div class="phone-fan">
+      <!-- Phone 1: Home -->
+      <div class="mp">
+        <div class="mph">🥕 Insta<span class="os">Kart</span></div>
+        <div class="mpb">
+          <div class="mp-loc">📍 517 SW 98th St ▾</div>
+          <div class="mp-cats">
+            <div class="mp-cat act">🛒</div>
+            <div class="mp-cat">🍕<div class="mp-catx">✕</div></div>
+            <div class="mp-cat">🍜<div class="mp-catx">✕</div></div>
+            <div class="mp-cat">🌮<div class="mp-catx">✕</div></div>
+          </div>
+          <div class="mp-card">
+            <div class="mp-card-img">🛒</div>
+            <div class="mp-card-info">
+              <div class="mp-card-name">Your Local Grocery Store</div>
+              <div class="mp-card-meta">⭐ 4.8 · Free delivery</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Phone 2: Store / Mic (center, prominent) -->
+      <div class="mp">
+        <div class="mph">← 🥕 Insta<span class="os">Kart</span></div>
+        <div class="mpb">
+          <div class="mp-hero"><div class="mp-hero-txt">Your Local Grocery Store</div></div>
+          <div class="mp-mic-wrap">
+            <div class="mp-mic-btn">🎤</div>
+            <div class="mp-mic-lbl">Tap to tell me<br>what you need</div>
+          </div>
+        </div>
+      </div>
+      <!-- Phone 3: Cart -->
+      <div class="mp">
+        <div class="mph">✕ &nbsp;Your Cart</div>
+        <div class="mpb">
+          <div class="mp-mod"><div class="mp-mod-bar">Add items or make changes…</div></div>
+          <div class="mp-items">
+            <div class="mp-item"><div class="mp-item-img">🥬</div><div class="mp-item-lines"><div class="mp-item-n"></div><div class="mp-item-s"></div></div></div>
+            <div class="mp-item"><div class="mp-item-img">🧀</div><div class="mp-item-lines"><div class="mp-item-n"></div><div class="mp-item-s"></div></div></div>
+            <div class="mp-item"><div class="mp-item-img">🥩</div><div class="mp-item-lines"><div class="mp-item-n"></div><div class="mp-item-s"></div></div></div>
+            <div class="mp-item"><div class="mp-item-img">🥛</div><div class="mp-item-lines"><div class="mp-item-n"></div><div class="mp-item-s"></div></div></div>
+          </div>
+          <div class="mp-co">Go to checkout</div>
+        </div>
+      </div>
     </div>
-    <div class="mkt-foot">A portfolio demo by Michael Fitzpatrick</div>
+
+    <!-- Copy -->
+    <div class="mkt-copy-block">
+      <div class="mkt-copy-lbl">The Problem</div>
+      <div class="mkt-copy-p">Grocery apps are built like e-commerce stores. Shoppers think in plain language — <strong>"I need stuff for tacos, we're out of milk"</strong> — but every major app forces browse → search → click across hundreds of SKUs. Mobile cart abandonment hits <strong>83%</strong>. The interface hasn't caught up to how people actually think.</div>
+    </div>
+
+    <div class="mkt-copy-block">
+      <div class="mkt-copy-lbl">The Solution: Speech-To-Checkout</div>
+      <div class="mkt-copy-p">InstaKart is a speech-first grocery ordering experience. Just say what you need — AI interprets it, maps it to live inventory, and builds your cart.</div>
+      <div class="mkt-feat">
+        <div class="mkt-feat-item">🎤 <strong>Speech-First</strong> — No browsing. No taps. No filters.</div>
+        <div class="mkt-feat-item">🤖 <strong>AI Cart Building</strong> — Natural language → real products &amp; prices</div>
+        <div class="mkt-feat-item">💡 <strong>Transparent AI</strong> — Surfaces its assumptions as it builds</div>
+      </div>
+    </div>
+
+    <div class="mkt-foot">Speech-To-Checkout isn't a feature. It's a better starting point.</div>
   </div>
 
   <div class="phone-wrap">
